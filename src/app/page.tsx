@@ -328,16 +328,41 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="space-y-4">
-            <h4 className="font-bold text-stone-900 uppercase tracking-widest text-xs">
-              Visit Us
-            </h4>
-            {/* TODO: Replace with real address once confirmed by client */}
-            <p className="text-stone-500">
-              123 Spice Garden Lane,<br />
-              Toronto, ON M5V 1A1<br />
-              Open Daily: 11AM – 10PM
-            </p>
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <h4 className="font-bold text-stone-900 uppercase tracking-widest text-xs">
+                Contact Us
+              </h4>
+              <div className="space-y-3">
+                <a 
+                  href={`https://wa.me/2349018450336`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-stone-500 hover:text-emerald-700 transition-colors"
+                >
+                  <span className="material-symbols-outlined text-sm">call</span>
+                  WhatsApp: +234 901 845 0336
+                </a>
+                <a 
+                  href="mailto:Mmgakinquiry@gmail.com"
+                  className="flex items-center gap-2 text-stone-500 hover:text-orange-600 transition-colors"
+                >
+                  <span className="material-symbols-outlined text-sm">alternate_email</span>
+                  Mmgakinquiry@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="font-bold text-stone-900 uppercase tracking-widest text-xs">
+                Visit Us
+              </h4>
+              <p className="text-stone-500">
+                123 Spice Garden Lane,<br />
+                Toronto, ON M5V 1A1<br />
+                <span className="text-stone-400 text-xs mt-1 block">Mon–Fri: 11AM–10PM | Sat–Sun: 12PM–11PM</span>
+              </p>
+            </div>
           </div>
         </div>
 
