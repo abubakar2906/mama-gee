@@ -56,16 +56,20 @@ export default function AuthPage() {
 
         {/* Logo */}
         <div className="text-center mb-10">
-          <Link href="/" className="inline-block">
+          <Link href="/" className="inline-flex flex-col items-center gap-3 hover:opacity-80 transition-opacity">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo.png"
-              alt="Mama Gee Nigerian Kitchen"
-              className="h-14 w-auto object-contain mx-auto"
+              src="/logo1.png"
+              alt="Mama Gee icon"
+              className="h-20 w-auto object-contain"
             />
+            <div className="flex flex-col items-center leading-none">
+              <span className="text-[#F5A623] font-black text-3xl tracking-tight">Mama Gee</span>
+              <span className="text-[#1a6b3a] font-bold text-[11px] uppercase tracking-[0.18em] mt-0.5">Nigerian Kitchen</span>
+            </div>
           </Link>
-          <p className="text-on-surface-variant mt-4 font-body">
-            {mode === "login" ? "Welcome back" : "Create your account"}
+          <p className="text-on-surface-variant mt-5 font-body">
+            {mode === "login" ? "Welcome back 👋" : "Create your account"}
           </p>
         </div>
 

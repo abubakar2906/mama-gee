@@ -114,14 +114,22 @@ export default function Navbar({
     <nav className="fixed top-0 w-full z-50 bg-background/85 backdrop-blur-xl border-b border-outline-variant/10">
       <div className="flex justify-between items-center px-6 md:px-8 h-16 md:h-[72px] max-w-screen-2xl mx-auto">
 
-        {/* Logo — consistent across all variants */}
-        <Link href="/" className="flex-shrink-0 hover:opacity-80 transition-opacity">
+        {/* Brand lockup: icon on left, name on right */}
+        <Link href="/" className="flex-shrink-0 flex items-center gap-2.5 hover:opacity-80 transition-opacity">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo.png"
-            alt="Mama Gee Nigerian Kitchen"
-            className="h-10 md:h-12 w-auto object-contain"
+            src="/logo1.png"
+            alt="Mama Gee icon"
+            className="h-9 md:h-10 w-auto object-contain"
           />
+          <div className="flex flex-col leading-none">
+            <span className="text-[#F5A623] font-black text-lg md:text-xl tracking-tight" style={{ fontFamily: "var(--font-headline, sans-serif)" }}>
+              Mama Gee
+            </span>
+            <span className="text-[#1a6b3a] font-bold text-[9px] md:text-[10px] uppercase tracking-[0.15em]">
+              Nigerian Kitchen
+            </span>
+          </div>
         </Link>
 
         {/* ── Default variant ────────────────────────── */}

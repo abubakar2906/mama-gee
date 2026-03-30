@@ -264,12 +264,18 @@ export default function HomePage() {
       <footer className="bg-stone-100">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 py-12 max-w-7xl mx-auto font-body text-sm leading-relaxed">
           <div className="space-y-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo.png"
-              alt="Mama Gee Nigerian Kitchen"
-              className="h-10 w-auto object-contain"
-            />
+            <div className="flex items-center gap-2.5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo1.png"
+                alt="Mama Gee icon"
+                className="h-11 w-auto object-contain"
+              />
+              <div className="flex flex-col leading-none">
+                <span className="text-[#F5A623] font-black text-xl tracking-tight">Mama Gee</span>
+                <span className="text-[#1a6b3a] font-bold text-[9px] uppercase tracking-[0.15em]">Nigerian Kitchen</span>
+              </div>
+            </div>
             <p className="text-stone-500">
               Authentic Nigerian cuisine served with modern elegance.
               Bringing the heart of Lagos to Canada.
