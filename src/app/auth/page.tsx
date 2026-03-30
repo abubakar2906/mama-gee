@@ -17,12 +17,14 @@ export default function AuthPage() {
   const [error, setError]     = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const supabase = createClient();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
     setLoading(true);
+
+    // Only create the client when the user actually submits — never at render time
+    const supabase = createClient();
 
     if (mode === "login") {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
@@ -31,7 +33,6 @@ export default function AuthPage() {
     } else {
       const { data, error } = await supabase.auth.signUp({ email, password });
       if (error) { setError(error.message); setLoading(false); return; }
-      // Create profile row
       if (data.user) {
         await supabase.from("profiles").insert({
           id: data.user.id,
@@ -154,7 +155,7 @@ export default function AuthPage() {
               <button
                 onClick={async () => {
                   if (!email) { setError("Enter your email first"); return; }
-                  await supabase.auth.resetPasswordForEmail(email);
+                  await createClient().auth.resetPasswordForEmail(email);
                   setError("Check your email for a reset link.");
                 }}
                 className="text-primary font-bold hover:underline"
