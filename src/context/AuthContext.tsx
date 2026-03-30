@@ -7,8 +7,8 @@ import {
   useState,
   ReactNode,
 } from "react";
-import { createClient } from "@/lib/supabase";
-import type { User, Session } from "@supabase/supabase-js";
+import type { User, Session, SupabaseClient } from "@supabase/supabase-js";
+import { createBrowserClient } from "@supabase/ssr";
 
 // ── Types ────────────────────────────────────────────────
 
@@ -34,28 +34,38 @@ interface AuthContextValue {
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-export function AuthProvider({ children }: { children: ReactNode }) {
-  const supabase = createClient();
+function getSupabase(): SupabaseClient | null {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  return createBrowserClient(url, key);
+}
 
+export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser]       = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
 
-  async function fetchProfile(userId: string) {
-    const { data } = await supabase
-      .from("profiles")
-      .select("*")
-      .eq("id", userId)
-      .single();
-    if (data) setProfile(data as UserProfile);
-  }
-
-  async function refreshProfile() {
-    if (user) await fetchProfile(user.id);
-  }
-
   useEffect(() => {
+    const supabase = getSupabase();
+
+    if (!supabase) {
+      // No credentials — just stop loading, all auth state stays null
+      setLoading(false);
+      return;
+    }
+
+    async function fetchProfile(userId: string) {
+      if (!supabase) return;
+      const { data } = await supabase
+        .from("profiles")
+        .select("*")
+        .eq("id", userId)
+        .single();
+      if (data) setProfile(data as UserProfile);
+    }
+
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
@@ -78,9 +88,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     );
 
     return () => subscription.unsubscribe();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
+
+  async function refreshProfile() {
+    const supabase = getSupabase();
+    if (!supabase || !user) return;
+    const { data } = await supabase
+      .from("profiles")
+      .select("*")
+      .eq("id", user.id)
+      .single();
+    if (data) setProfile(data as UserProfile);
+  }
 
   async function signOut() {
+    const supabase = getSupabase();
+    if (!supabase) return;
     await supabase.auth.signOut();
     setProfile(null);
   }
