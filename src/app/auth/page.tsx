@@ -59,9 +59,9 @@ export default function AuthPage() {
           <Link href="/" className="inline-flex flex-col items-center gap-3 hover:opacity-80 transition-opacity">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo1.png"
+              src="/logo5.png"
               alt="Mama Gee icon"
-              className="h-20 w-auto object-contain"
+              className="h-20 w-20 object-contain"
             />
             <div className="flex flex-col items-center leading-none">
               <span className="text-[#F5A623] font-black text-3xl tracking-tight">Mama Gee</span>

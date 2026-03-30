@@ -267,9 +267,9 @@ export default function HomePage() {
             <div className="flex items-center gap-2.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo1.png"
+                src="/logo5.png"
                 alt="Mama Gee icon"
-                className="h-11 w-auto object-contain"
+                className="h-11 w-11 object-contain"
               />
               <div className="flex flex-col leading-none">
                 <span className="text-[#F5A623] font-black text-xl tracking-tight">Mama Gee</span>

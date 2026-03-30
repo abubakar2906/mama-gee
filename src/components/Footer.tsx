@@ -11,9 +11,9 @@ export default function Footer() {
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo1.png"
+              src="/logo5.png"
               alt="Mama Gee icon"
-              className="h-12 w-auto object-contain"
+              className="h-12 w-12 object-contain"
             />
             <div className="flex flex-col leading-none">
               <span className="text-[#F5A623] font-black text-2xl tracking-tight">
