@@ -41,19 +41,24 @@ export default function DashboardClient() {
     if (!user) return;
     setSaving(true);
     const supabase = createClient();
-    await supabase
+    const { error } = await supabase
       .from("profiles")
-      .update({
+      .upsert({
+        id: user.id,
         full_name: formName.trim(),
         phone: formPhone.trim(),
         delivery_address: formAddress.trim(),
         city: formCity.trim(),
         apt_suite: formApt.trim(),
-      })
-      .eq("id", user.id);
+      }, { onConflict: "id" });
 
-    await refreshProfile();
-    setEditing(false);
+    if (error) {
+      console.error("Error saving profile:", error);
+      alert("Failed to save changes. Please try again.");
+    } else {
+      await refreshProfile();
+      setEditing(false);
+    }
     setSaving(false);
   }
 

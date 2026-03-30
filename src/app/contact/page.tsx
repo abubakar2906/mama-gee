@@ -16,7 +16,7 @@ const CONTACT_INFO = [
   {
     icon: "location_on",
     label: "Visit Us",
-    value: "123 Spice Garden Lane, Toronto, ON M5V 1A1",
+    value: "26 Wentworth Street South, Hamilton, ON L8N 2Y3",
     sub: "Canada",
   },
   {
