@@ -151,61 +151,62 @@ export default function CheckoutClient() {
                   {items.map((item) => (
                     <div
                       key={item.id}
-                      className="flex gap-4 items-center bg-surface-container-lowest rounded-2xl p-4 shadow-sm"
+                      className="bg-surface-container-lowest rounded-2xl p-4 shadow-sm space-y-3"
                     >
-                      <div className="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 relative">
-                        <Image
-                          src={item.image}
-                          alt={item.name}
-                          fill
-                          className="object-cover"
-                          sizes="80px"
-                        />
-                      </div>
-                      <div className="flex-grow min-w-0">
-                        <h4 className="font-headline font-bold text-on-surface truncate">
-                          {item.name}
-                        </h4>
-                        <p className="text-sm text-on-surface-variant">
-                          {formatCAD(item.price)} each
-                        </p>
+                      {/* Row 1: image + name/price */}
+                      <div className="flex gap-3 items-center">
+                        <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 relative">
+                          <Image
+                            src={item.image}
+                            alt={item.name}
+                            fill
+                            className="object-cover"
+                            sizes="64px"
+                          />
+                        </div>
+                        <div className="flex-grow min-w-0">
+                          <h4 className="font-headline font-bold text-on-surface truncate">
+                            {item.name}
+                          </h4>
+                          <p className="text-sm text-on-surface-variant">
+                            {formatCAD(item.price)} each
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Quantity controls */}
-                      <div className="flex items-center gap-1">
-                        <button
-                          onClick={() => decrement(item.id)}
-                          className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-variant transition-colors"
-                        >
-                          <span className="material-symbols-outlined text-lg">
-                            remove
+                      {/* Row 2: qty controls + total + delete */}
+                      <div className="flex items-center justify-between">
+                        {/* Quantity controls */}
+                        <div className="flex items-center gap-1">
+                          <button
+                            onClick={() => decrement(item.id)}
+                            className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-variant transition-colors"
+                          >
+                            <span className="material-symbols-outlined text-lg">remove</span>
+                          </button>
+                          <span className="w-8 text-center font-bold text-on-surface">
+                            {item.quantity}
                           </span>
-                        </button>
-                        <span className="w-8 text-center font-bold text-on-surface">
-                          {item.quantity}
-                        </span>
-                        <button
-                          onClick={() => increment(item.id)}
-                          className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-variant transition-colors"
-                        >
-                          <span className="material-symbols-outlined text-lg">
-                            add
-                          </span>
-                        </button>
+                          <button
+                            onClick={() => increment(item.id)}
+                            className="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center hover:bg-surface-variant transition-colors"
+                          >
+                            <span className="material-symbols-outlined text-lg">add</span>
+                          </button>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                          <p className="font-bold text-primary whitespace-nowrap">
+                            {formatCAD(item.price * item.quantity)}
+                          </p>
+                          <button
+                            onClick={() => removeItem(item.id)}
+                            className="p-2 text-on-surface-variant/50 hover:text-error transition-colors"
+                          >
+                            <span className="material-symbols-outlined text-lg">delete</span>
+                          </button>
+                        </div>
                       </div>
-
-                      <p className="font-bold text-primary whitespace-nowrap w-20 text-right">
-                        {formatCAD(item.price * item.quantity)}
-                      </p>
-
-                      <button
-                        onClick={() => removeItem(item.id)}
-                        className="p-2 text-on-surface-variant/50 hover:text-error transition-colors"
-                      >
-                        <span className="material-symbols-outlined text-lg">
-                          delete
-                        </span>
-                      </button>
                     </div>
                   ))}
                 </div>
