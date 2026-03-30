@@ -282,7 +282,7 @@ export default function HomePage() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/Food_africann"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-emerald-800 hover:text-orange-600 transition-colors"
@@ -291,7 +291,16 @@ export default function HomePage() {
                 <span className="material-symbols-outlined">public</span>
               </a>
               <a
-                href="mailto:hello@mamagee.ca"
+                href="https://tiktok.com/@africankitchen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-800 hover:text-orange-600 transition-colors"
+                aria-label="TikTok"
+              >
+                <span className="material-symbols-outlined">smart_display</span>
+              </a>
+              <a
+                href="mailto:Mmgakinquiry@gmail.com"
                 className="text-emerald-800 hover:text-orange-600 transition-colors"
                 aria-label="Email"
               >

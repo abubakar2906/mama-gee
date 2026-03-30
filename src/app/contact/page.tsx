@@ -35,16 +35,15 @@ const CONTACT_INFO = [
   {
     icon: "alternate_email",
     label: "Email",
-    value: "hello@mamagee.ca",
+    value: "Mmgakinquiry@gmail.com",
     sub: "We reply within 24 hours",
-    href: "mailto:hello@mamagee.ca",
+    href: "mailto:Mmgakinquiry@gmail.com",
   },
 ];
 
 const SOCIALS = [
-  { icon: "photo_camera", label: "Instagram", href: "https://instagram.com/mamageekitchen" },
-  { icon: "smart_display", label: "TikTok", href: "https://tiktok.com/@mamageekitchen" },
-  { icon: "group", label: "Facebook", href: "https://facebook.com/mamageekitchen" },
+  { icon: "photo_camera", label: "Instagram", href: "https://instagram.com/Food_africann" },
+  { icon: "smart_display", label: "TikTok", href: "https://tiktok.com/@africankitchen" },
 ];
 
 interface FormState {
@@ -337,7 +336,7 @@ export default function ContactPage() {
                           {social.label}
                         </p>
                         <p className="text-on-surface-variant text-xs">
-                          @mamageekitchen
+                          {social.label === "Instagram" ? "@Food_africann" : "@African kitchen"}
                         </p>
                       </div>
                       <span className="material-symbols-outlined text-on-surface-variant ml-auto group-hover:translate-x-1 transition-transform">
