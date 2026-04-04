@@ -29,7 +29,7 @@ export const menuItems: MenuItem[] = [
   // ── Swallows ──────────────────────────────────────────
   {
     id: "pounded-yam-edikaikong",
-    name: "Pounded Yam & Edikaikong",
+    name: "Poundo & Edikaikong",
     description: "Soft, fluffy traditional yam mash perfectly paired with richly prepared Edikaikong soup.",
     image: "/PoundandEdikaikonCombo.jpeg",
     category: "swallows",
@@ -54,7 +54,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "pounded-yam-egusi",
-    name: "Pounded Yam & Egusi",
+    name: "Fufu & Edikaikong",
     description: "Classic pounded yam paired with a rich, nutty melon seed soup loaded with assorted proteins.",
     image: "/poundoandegusi.jpeg",
     category: "swallows",
@@ -220,7 +220,7 @@ export const menuItems: MenuItem[] = [
   },
   {
     id: "buns-bread",
-    name: "Fresh Buns & Bread",
+    name: "Fresh Buns Bread",
     description: "Soft, freshly baked Nigerian buns and sweet bread, perfect alongside a hot cup of tea or cocoa.",
     image: "/BunsandBread.jpeg",
     category: "sides",

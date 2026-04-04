@@ -68,7 +68,7 @@ export default function HomePage() {
                   alt="Steaming Jollof Rice — vibrant orange rice garnished with fresh herbs and grilled chicken on a rustic clay plate"
                   width={700}
                   height={600}
-                  className="w-full h-[500px] lg:h-[600px] object-cover"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[600px] object-cover object-center"
                   priority
                 />
               </div>
@@ -149,13 +149,13 @@ export default function HomePage() {
               </div>
 
               {/* Sides — dark image card */}
-              <div className="md:col-span-4 bg-on-background rounded-xl p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group min-h-[350px]">
+              <div className="md:col-span-4 bg-on-background rounded-xl p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group min-h-[250px] md:min-h-[350px]">
                 <div className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity">
                   <Image
                     src="/Sides1.jpeg"
                     alt="Small Chops and Sides"
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="relative z-10">
@@ -177,16 +177,16 @@ export default function HomePage() {
               </div>
 
               {/* Rice Menu — large image card */}
-              <div className="md:col-span-12 bg-on-background rounded-xl p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group min-h-[400px] md:min-h-[500px]">
+              <div className="md:col-span-12 bg-on-background rounded-xl p-6 sm:p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group min-h-[300px] md:min-h-[500px]">
                 <div className="absolute inset-0 opacity-70 group-hover:opacity-50 transition-opacity duration-700">
                   <Image
                     src="/RiceMenu2.jpeg"
                     alt="Rice Menu Deluxe"
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-1000"
                   />
                 </div>
-                <div className="relative z-10 max-w-2xl">
+                <div className="relative z-10 max-w-2xl mt-32 md:mt-0">
                   <span className="text-primary font-bold uppercase tracking-widest text-sm drop-shadow-md">
                     Party Favorites
                   </span>
@@ -312,7 +312,7 @@ export default function HomePage() {
                 </svg>
               </a>
               <a
-                href={`https://wa.me/2349018450336`}
+                href={`https://wa.me/+16477734751`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-emerald-800 hover:text-emerald-600 transition-all hover:scale-110"
