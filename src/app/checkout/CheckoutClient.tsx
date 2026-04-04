@@ -140,32 +140,32 @@ export default function CheckoutClient() {
             ) : (
               <>
                 {/* Item list */}
-                <div className="space-y-4">
+                <div className="space-y-5">
                   {items.map((item) => (
                     <div
                       key={item.id}
-                      className="bg-surface-container-lowest rounded-2xl p-4 shadow-sm space-y-3"
+                      className="bg-surface-container-lowest rounded-2xl p-5 shadow-sm space-y-4"
                     >
                       {/* Row 1: image + name */}
-                      <div className="flex gap-3 items-center">
-                        <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 relative">
+                      <div className="flex gap-4 items-center">
+                        <div className="w-[80px] h-[80px] sm:w-20 sm:h-20 rounded-xl overflow-hidden flex-shrink-0 relative border border-outline-variant/20 shadow-sm">
                           <Image
                             src={item.image}
                             alt={item.name}
                             fill
                             className="object-cover"
-                            sizes="64px"
+                            sizes="80px"
                           />
                         </div>
                         <div className="flex-grow min-w-0">
-                          <h4 className="font-headline font-bold text-on-surface truncate">
+                          <h4 className="font-headline font-bold text-on-surface text-lg truncate mb-1">
                             {item.name}
                           </h4>
                         </div>
                       </div>
 
                       {/* Row 2: qty controls + total + delete */}
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between pt-2 border-t border-outline-variant/20">
                         {/* Quantity controls */}
                         <div className="flex items-center gap-1">
                           <button
@@ -429,27 +429,29 @@ export default function CheckoutClient() {
                 </button>
               </div>
 
-              {items.map((item) => (
-                <div key={item.id} className="flex gap-4 items-center">
-                  <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 relative">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                      sizes="56px"
-                    />
+              <div className="space-y-6 pt-2">
+                {items.map((item) => (
+                  <div key={item.id} className="flex gap-4 items-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden flex-shrink-0 relative border border-outline-variant/20 shadow-sm">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                        sizes="80px"
+                      />
+                    </div>
+                    <div className="flex-grow min-w-0">
+                      <h4 className="font-headline font-bold text-on-surface text-base sm:text-lg mb-1 truncate">
+                        {item.name}
+                      </h4>
+                      <p className="text-sm font-bold text-primary">
+                        × {item.quantity}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-grow">
-                    <h4 className="font-headline font-bold text-on-surface text-sm">
-                      {item.name}
-                    </h4>
-                    <p className="text-xs text-on-surface-variant">
-                      ×{item.quantity}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* WhatsApp CTA */}

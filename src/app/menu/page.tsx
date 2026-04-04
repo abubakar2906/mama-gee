@@ -111,7 +111,7 @@ export default function MenuPage() {
                 ref={(el) => { sectionRefs.current[cat] = el; }}
                 className="pt-16 scroll-mt-[140px]"
               >
-                <div className="flex items-end justify-between mb-8">
+                <div className="flex items-end justify-between mb-10">
                   <div>
                     <h2 className="text-3xl lg:text-4xl font-headline font-extrabold tracking-tight text-on-background">
                       {CATEGORY_LABELS[cat]}
@@ -123,7 +123,7 @@ export default function MenuPage() {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 sm:gap-12">
                   {items.map((item) => (
                     <FoodCard key={item.id} item={item} />
                   ))}

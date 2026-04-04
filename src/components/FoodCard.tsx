@@ -47,14 +47,14 @@ export default function FoodCard({ item }: FoodCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-6 flex flex-col flex-grow">
-        <div className="flex justify-between items-baseline mb-3">
-          <h3 className="font-headline font-extrabold text-2xl text-on-surface">
+      <div className="p-6 sm:p-8 flex flex-col flex-grow bg-surface-container-lowest rounded-b-2xl">
+        <div className="flex justify-between items-baseline mb-4">
+          <h3 className="font-headline font-extrabold text-2xl text-on-surface leading-tight">
             {item.name}
           </h3>
         </div>
 
-        <p className="font-body text-on-surface-variant text-base mb-8 line-clamp-2">
+        <p className="font-body text-on-surface-variant text-base mb-8 line-clamp-3 leading-relaxed">
           {item.description}
         </p>
 

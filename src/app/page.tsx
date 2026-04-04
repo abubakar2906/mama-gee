@@ -97,9 +97,9 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto">
 
             {/* Section header */}
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
               <div className="space-y-4">
-                <h2 className="text-5xl font-black font-headline tracking-tighter text-on-background">
+                <h2 className="text-4xl md:text-5xl font-black font-headline tracking-tighter text-on-background">
                   Our Specialties
                 </h2>
                 <div className="h-2 w-32 bg-secondary rounded-full" />
@@ -111,10 +111,10 @@ export default function HomePage() {
             </div>
 
             {/* Bento grid */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:h-[800px]">
 
               {/* Pounded Yam & Egusi — large card */}
-              <div className="md:col-span-8 bg-surface-container-low rounded-xl p-8 flex flex-col justify-between overflow-hidden relative group">
+              <div className="md:col-span-8 bg-surface-container-low rounded-xl p-8 md:p-12 flex flex-col justify-between overflow-hidden relative group min-h-[350px]">
                 <div className="relative z-10 max-w-sm">
                   <span className="text-secondary font-bold uppercase tracking-widest text-sm">
                     The Classic
@@ -149,7 +149,7 @@ export default function HomePage() {
               </div>
 
               {/* Sides — dark image card */}
-              <div className="md:col-span-4 bg-on-background rounded-xl p-8 flex flex-col justify-end relative overflow-hidden group">
+              <div className="md:col-span-4 bg-on-background rounded-xl p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group min-h-[350px]">
                 <div className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity">
                   <Image
                     src="/Sides1.jpeg"
@@ -177,7 +177,7 @@ export default function HomePage() {
               </div>
 
               {/* Rice Menu — large image card */}
-              <div className="md:col-span-12 bg-on-background rounded-xl p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group min-h-[300px] md:min-h-[400px]">
+              <div className="md:col-span-12 bg-on-background rounded-xl p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group min-h-[400px] md:min-h-[500px]">
                 <div className="absolute inset-0 opacity-70 group-hover:opacity-50 transition-opacity duration-700">
                   <Image
                     src="/RiceMenu2.jpeg"
@@ -190,7 +190,7 @@ export default function HomePage() {
                   <span className="text-primary font-bold uppercase tracking-widest text-sm drop-shadow-md">
                     Party Favorites
                   </span>
-                  <h3 className="text-4xl md:text-5xl font-black font-headline text-white mt-2 mb-4 drop-shadow-lg">
+                  <h3 className="text-3xl md:text-5xl font-black font-headline text-white mt-2 mb-4 drop-shadow-lg">
                     Signature Rice Menu
                   </h3>
                   <p className="text-surface-variant text-lg lg:text-xl mb-6 drop-shadow-md font-medium">
