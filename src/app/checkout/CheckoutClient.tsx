@@ -9,7 +9,6 @@ import MobileNav from "@/components/MobileNav";
 import StepIndicator from "@/components/StepIndicator";
 import { useCart } from "@/context/CartContext";
 import { useAuth } from "@/context/AuthContext";
-import { formatCAD } from "@/lib/formatCurrency";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 
 interface FormData {
@@ -31,9 +30,6 @@ interface FormErrors {
 export default function CheckoutClient() {
   const {
     items,
-    subtotalCents,
-    deliveryFeeCents,
-    totalCents,
     totalItems,
     increment,
     decrement,
@@ -90,9 +86,6 @@ export default function CheckoutClient() {
     const link = buildWhatsAppLink({
       ...form,
       items,
-      subtotalCents,
-      deliveryFeeCents,
-      totalCents,
     });
     window.open(link, "_blank");
   }
@@ -153,7 +146,7 @@ export default function CheckoutClient() {
                       key={item.id}
                       className="bg-surface-container-lowest rounded-2xl p-4 shadow-sm space-y-3"
                     >
-                      {/* Row 1: image + name/price */}
+                      {/* Row 1: image + name */}
                       <div className="flex gap-3 items-center">
                         <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 relative">
                           <Image
@@ -168,9 +161,6 @@ export default function CheckoutClient() {
                           <h4 className="font-headline font-bold text-on-surface truncate">
                             {item.name}
                           </h4>
-                          <p className="text-sm text-on-surface-variant">
-                            {formatCAD(item.price)} each
-                          </p>
                         </div>
                       </div>
 
@@ -196,9 +186,6 @@ export default function CheckoutClient() {
                         </div>
 
                         <div className="flex items-center gap-2">
-                          <p className="font-bold text-primary whitespace-nowrap">
-                            {formatCAD(item.price * item.quantity)}
-                          </p>
                           <button
                             onClick={() => removeItem(item.id)}
                             className="p-2 text-on-surface-variant/50 hover:text-error transition-colors"
@@ -209,23 +196,6 @@ export default function CheckoutClient() {
                       </div>
                     </div>
                   ))}
-                </div>
-
-                {/* Totals */}
-                <div className="bg-surface-container-low rounded-2xl p-6 space-y-3 font-label">
-                  <div className="flex justify-between text-on-surface-variant">
-                    <span>Subtotal</span>
-                    <span>{formatCAD(subtotalCents)}</span>
-                  </div>
-                  <div className="flex justify-between text-on-surface-variant">
-                    <span>Delivery Fee</span>
-                    <span>{formatCAD(deliveryFeeCents)}</span>
-                  </div>
-                  <div className="h-px bg-outline-variant/20" />
-                  <div className="flex justify-between text-2xl font-headline font-extrabold text-on-surface pt-2">
-                    <span>Total</span>
-                    <span className="text-primary">{formatCAD(totalCents)}</span>
-                  </div>
                 </div>
 
                 {/* Continue */}
@@ -478,28 +448,8 @@ export default function CheckoutClient() {
                       ×{item.quantity}
                     </p>
                   </div>
-                  <p className="font-bold text-primary text-sm">
-                    {formatCAD(item.price * item.quantity)}
-                  </p>
                 </div>
               ))}
-
-              <div className="h-px bg-outline-variant/20 mt-2" />
-
-              <div className="space-y-2 font-label text-sm pt-2">
-                <div className="flex justify-between text-on-surface-variant">
-                  <span>Subtotal</span>
-                  <span>{formatCAD(subtotalCents)}</span>
-                </div>
-                <div className="flex justify-between text-on-surface-variant">
-                  <span>Delivery Fee</span>
-                  <span>{formatCAD(deliveryFeeCents)}</span>
-                </div>
-                <div className="flex justify-between text-xl font-headline font-extrabold text-on-surface pt-2">
-                  <span>Total</span>
-                  <span className="text-primary">{formatCAD(totalCents)}</span>
-                </div>
-              </div>
             </div>
 
             {/* WhatsApp CTA */}

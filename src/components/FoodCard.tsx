@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
-import { formatCAD } from "@/lib/formatCurrency";
 import type { MenuItem } from "@/lib/menuData";
 
 interface FoodCardProps {
@@ -19,7 +18,6 @@ export default function FoodCard({ item }: FoodCardProps) {
     addItem({
       id:    item.id,
       name:  item.name,
-      price: item.priceCents,
       image: item.image,
     });
   }
@@ -54,9 +52,6 @@ export default function FoodCard({ item }: FoodCardProps) {
           <h3 className="font-headline font-extrabold text-2xl text-on-surface">
             {item.name}
           </h3>
-          <span className="font-headline font-bold text-primary text-xl whitespace-nowrap ml-2">
-            {formatCAD(item.priceCents)}
-          </span>
         </div>
 
         <p className="font-body text-on-surface-variant text-base mb-8 line-clamp-2">

@@ -64,7 +64,7 @@ export default function HomePage() {
 
               <div className="relative rounded-xl overflow-hidden shadow-2xl transform rotate-2 hover:rotate-0 transition-transform duration-500">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuALZUCJ5nBdim96BUXOb1DIDkKj626RSjLspwpi1EFLhYlcX5hdxIjDV5y37EriOWVCz-OEIFnA3xinSakv9CLtculQhhY8NX_yrH6A0nYGV6m9djO5FKNx9ei4VWlxhoLGFYHFJJYZxqshNCCG69-yABAOAasWMUU6ePGJDUv4411jigKRyxVPHpuVW-cuY-C9DD6IGKRN6PSNNbuC4olN-QEtFTPusdRbd-Blbfo2qLLHfoPHeo9hWCQLZJ3JNE2xhHoV6UsOnK9K"
+                  src="/RiceMenu.jpeg"
                   alt="Steaming Jollof Rice — vibrant orange rice garnished with fresh herbs and grilled chicken on a rustic clay plate"
                   width={700}
                   height={600}
@@ -139,8 +139,8 @@ export default function HomePage() {
 
                 <div className="md:absolute md:right-0 md:bottom-0 md:w-3/5 mt-8 md:mt-0 transform group-hover:scale-105 transition-transform duration-700">
                   <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy3wlsY9zgu6D4Rx9T8pCpAwfcA1WdkiCvmjq5UT7V6HZfNv7sT9fyHByaee1DVFl75lydMlnRuPhq6AowW6UCj_V5cghxIFApdBq9mTACO_VuHP4rG-IusLvQI9sznLcUZDsj17Z5aiZFx8Cjt95D4CXSAaIB3BnN7rWrCk-vawGUUbyQRFw6hbYt3BlojgRL1HCEmbaQr1sBH32ZHL_zhJW0YgEPkqsNa1SocopCcr7HOUjO3xRzBg4m6Y3oYzgOjBIcM4LMjj3S"
-                    alt="Pounded Yam and Egusi soup"
+                    src="/PoundandEdikaikonCombo.jpeg"
+                    alt="Pounded Yam and Edikaikong soup"
                     width={600}
                     height={400}
                     className="rounded-tl-xl shadow-2xl w-full h-auto"
@@ -148,23 +148,22 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Suya — dark image card */}
+              {/* Sides — dark image card */}
               <div className="md:col-span-4 bg-on-background rounded-xl p-8 flex flex-col justify-end relative overflow-hidden group">
                 <div className="absolute inset-0 opacity-60 group-hover:opacity-40 transition-opacity">
                   <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRz0FFG_Fz_DD4lwG43n4Alrctr39FMFx5BbJKIbgGU4eW-mEVQdXPfBIA9iVwkXsmAqt-A0smoD_BDPh7pDt2KLeVDqFNWT08zmebfJUp_w2E8ncOTegmmQbQhqZuDEnZEG8VoT8Hh_5YOPeZsdutjJjJ6NZ8VO7pCh3BcISDU4eycm5ZoVa8o3wb82fuVT9YvIK7GVVUcnadM5EW0SN1RzdDtqLXa_5imhDl7wHeOPwbP4HaPWZkKGI0wnpg0JLa6qXGoFcl7LKK"
-                    alt="Nigerian Suya skewers"
+                    src="/Sides1.jpeg"
+                    alt="Small Chops and Sides"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div className="relative z-10">
                   <h3 className="text-3xl font-black font-headline text-white mb-2">
-                    Signature Suya
+                    Savory Sides
                   </h3>
                   <p className="text-surface-variant mb-4">
-                    Flame-grilled beef skewers dusted in our secret Yaji spice
-                    blend.
+                    Assorted light bites and small chops. Perfect for sharing.
                   </p>
                   <div className="flex gap-2">
                     <span className="bg-primary/20 text-primary-container px-3 py-1 rounded-full text-xs font-bold border border-primary/30">
@@ -177,50 +176,59 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Street Food Soul — orange card */}
-              <div className="md:col-span-4 bg-primary-container rounded-xl p-8 flex flex-col items-center text-center justify-center group">
-                <span
-                  className="material-symbols-outlined text-6xl text-on-primary-container mb-4"
-                  style={{ fontVariationSettings: "'FILL' 1" }}
-                >
-                  bakery_dining
-                </span>
-                <h3 className="text-2xl font-black font-headline text-on-primary-container mb-2">
-                  Street Food Soul
-                </h3>
-                <p className="text-on-primary-container/80 text-sm">
-                  Puff Puff, Moin Moin, and the crunchiest Plantain chips
-                  you&apos;ve ever tasted.
-                </p>
-              </div>
-
-              {/* Zobo & Ginger — drinks card */}
-              <div className="md:col-span-8 bg-surface-container-highest rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center overflow-hidden">
-                <div className="flex-1 order-2 md:order-1">
-                  <h3 className="text-3xl font-black font-headline mb-4">
-                    Zobo & Ginger
-                  </h3>
-                  <p className="text-on-surface-variant mb-6">
-                    Our house-made Hibiscus and Ginger infusions. Refreshing,
-                    tart, and naturally sweet.
-                  </p>
-                  <div className="flex -space-x-3">
-                    <div className="w-10 h-10 rounded-full bg-primary border-2 border-white" />
-                    <div className="w-10 h-10 rounded-full bg-secondary border-2 border-white" />
-                    <div className="w-10 h-10 rounded-full bg-orange-400 border-2 border-white" />
-                  </div>
-                </div>
-                <div className="flex-1 order-1 md:order-2 w-full h-48 md:h-full relative min-h-[200px]">
+              {/* Rice Menu — large image card */}
+              <div className="md:col-span-12 bg-on-background rounded-xl p-8 md:p-12 flex flex-col justify-end relative overflow-hidden group min-h-[300px] md:min-h-[400px]">
+                <div className="absolute inset-0 opacity-70 group-hover:opacity-50 transition-opacity duration-700">
                   <Image
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwAJaAcT3rh-QsRxIRK1cSV4w4jMGvKQkQXaE2_f70ESmMEXsMMSisIE78cz_3kdz45bLd32ckr-ryF_6XHd9y2lLik5VKi-o11CLMqi6IJrdjJ3eUwNWWjTYyCjaxaPgaSsBZFHJbWbELkhzKDHC9qe32nVm6vRdTk2eQq8LDEXg7S4qODoWR5W6RZSbrV3ibxLe0uvoVj-FCPL2RZtPlG1hB3rdnSy3eXDUcep0rINGwgy6QToSXvnu43PSe5EIoX5Z9yGceYREE"
-                    alt="Zobo hibiscus drink"
+                    src="/RiceMenu2.jpeg"
+                    alt="Rice Menu Deluxe"
                     fill
-                    className="object-cover rounded-lg"
+                    className="object-cover group-hover:scale-105 transition-transform duration-1000"
                   />
+                </div>
+                <div className="relative z-10 max-w-2xl">
+                  <span className="text-primary font-bold uppercase tracking-widest text-sm drop-shadow-md">
+                    Party Favorites
+                  </span>
+                  <h3 className="text-4xl md:text-5xl font-black font-headline text-white mt-2 mb-4 drop-shadow-lg">
+                    Signature Rice Menu
+                  </h3>
+                  <p className="text-surface-variant text-lg lg:text-xl mb-6 drop-shadow-md font-medium">
+                    Smoky party jollof, vibrant fried rice, and savory local classics served with your choice of premium proteins and sides.
+                  </p>
+                  <Link
+                    href="/menu"
+                    className="inline-flex items-center gap-2 bg-white text-on-background px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform"
+                  >
+                    Explore Rice Dishes
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </Link>
                 </div>
               </div>
 
             </div>
+          </div>
+        </section>
+
+        {/* ── Video Section ───────────────────────────────────── */}
+        <section className="py-24 px-6 lg:px-12 bg-surface-container-lowest">
+          <div className="max-w-7xl mx-auto flex flex-col items-center text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black font-headline text-on-background mb-4">
+              The Mama Gee Experience
+            </h2>
+            <p className="text-on-surface-variant text-lg max-w-2xl">
+              Get a glimpse of our kitchen as we prepare your favorite dishes with authentic flavors, fresh ingredients, and heartfelt passion.
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto w-full rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] relative aspect-video bg-black border-4 border-white">
+            <video
+              src="/rivevid3.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-95"
+            />
           </div>
         </section>
 

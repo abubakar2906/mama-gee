@@ -2,10 +2,8 @@
 
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { formatCAD } from "@/lib/formatCurrency";
-
 export default function CartFab() {
-  const { totalItems, totalCents } = useCart();
+  const { totalItems } = useCart();
 
   if (totalItems === 0) return null;
 
@@ -16,8 +14,6 @@ export default function CartFab() {
     >
       <span className="material-symbols-outlined text-2xl">shopping_bag</span>
       <span>{totalItems} item{totalItems > 1 ? "s" : ""}</span>
-      <span className="opacity-70">·</span>
-      <span>{formatCAD(totalCents)}</span>
     </Link>
   );
 }

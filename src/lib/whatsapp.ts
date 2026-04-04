@@ -1,5 +1,4 @@
 import { CartItem } from "@/context/CartContext";
-import { formatCAD } from "./formatCurrency";
 
 const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "1XXXXXXXXXX"; // Set in .env
 
@@ -11,9 +10,6 @@ interface OrderDetails {
   aptSuite?: string;
   notes?: string;
   items: CartItem[];
-  subtotalCents: number;
-  deliveryFeeCents: number;
-  totalCents: number;
 }
 
 /**
@@ -24,7 +20,7 @@ export function buildWhatsAppLink(order: OrderDetails): string {
   const itemLines = order.items
     .map(
       (item) =>
-        `  • ${item.name} x${item.quantity} — ${formatCAD(item.price * item.quantity)}`
+        `  • ${item.name} x${item.quantity}`
     )
     .join("\n");
 
@@ -41,10 +37,6 @@ export function buildWhatsAppLink(order: OrderDetails): string {
     "",
     "*Order:*",
     itemLines,
-    "",
-    `*Subtotal:* ${formatCAD(order.subtotalCents)}`,
-    `*Delivery Fee:* ${formatCAD(order.deliveryFeeCents)}`,
-    `*Total:* ${formatCAD(order.totalCents)}`,
     ...(order.notes ? ["", `*Notes:* ${order.notes}`] : []),
     "",
     "_Order is confirmed when the restaurant replies. Thank you! 🙏_",

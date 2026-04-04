@@ -13,7 +13,6 @@ import {
 export interface CartItem {
   id: string;
   name: string;
-  price: number;        // in CAD cents (e.g. 1500 = $15.00)
   image: string;
   quantity: number;
   notes?: string;       // e.g. "Extra spice"
@@ -37,9 +36,6 @@ interface CartContextValue extends CartState {
   decrement: (id: string) => void;
   clearCart: () => void;
   totalItems: number;
-  subtotalCents: number;       // sum of (price × quantity)
-  deliveryFeeCents: number;    // flat fee — configurable later
-  totalCents: number;
 }
 
 // ── Reducer ──────────────────────────────────────────────
@@ -84,8 +80,6 @@ function cartReducer(state: CartState, action: CartAction): CartState {
 
 const CartContext = createContext<CartContextValue | null>(null);
 
-const DELIVERY_FEE_CENTS = 499; // $4.99 CAD flat fee
-
 export function CartProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, { items: [] });
 
@@ -95,10 +89,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const decrement  = useCallback((id: string) => dispatch({ type: "DECREMENT", id }), []);
   const clearCart  = useCallback(() => dispatch({ type: "CLEAR" }), []);
 
-  const totalItems      = state.items.reduce((sum, i) => sum + i.quantity, 0);
-  const subtotalCents   = state.items.reduce((sum, i) => sum + i.price * i.quantity, 0);
-  const deliveryFeeCents = totalItems > 0 ? DELIVERY_FEE_CENTS : 0;
-  const totalCents      = subtotalCents + deliveryFeeCents;
+  const totalItems = state.items.reduce((sum, i) => sum + i.quantity, 0);
 
   return (
     <CartContext.Provider
@@ -110,9 +101,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
         decrement,
         clearCart,
         totalItems,
-        subtotalCents,
-        deliveryFeeCents,
-        totalCents,
       }}
     >
       {children}
