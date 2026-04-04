@@ -25,7 +25,7 @@ export default function FoodCard({ item }: FoodCardProps) {
   return (
     <div className="group flex flex-col h-full bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
       {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative aspect-[4/5] md:aspect-[3/4] overflow-hidden rounded-t-2xl">
         <Image
           src={item.image}
           alt={item.name}
