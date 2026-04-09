@@ -36,10 +36,6 @@ export const metadata: Metadata = {
   description:
     "Authentic Nigerian cuisine crafted with soul, heat, and the freshest ingredients. Based in Canada. Order via WhatsApp.",
   keywords: ["Nigerian food", "Nigerian restaurant Canada", "Jollof rice", "Mama Gee"],
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
   openGraph: {
     type: "website" as const,
     url: "https://www.africankitchen.online",
@@ -52,19 +48,11 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Mama Gee Nigerian Kitchen - Authentic Nigerian Cuisine",
-        type: "image/png",
-      },
-      {
-        url: "/og-image-square.png",
-        width: 800,
-        height: 800,
-        alt: "Mama Gee Nigerian Kitchen Logo",
-        type: "image/png",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary_large_image" as const,
     title: "Mama Gee Nigerian Kitchen",
     description: "Authentic Nigerian cuisine, delivered with soul.",
     images: ["/og-image.png"],
@@ -79,6 +67,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"
