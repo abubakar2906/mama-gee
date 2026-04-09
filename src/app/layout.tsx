@@ -37,20 +37,11 @@ export const metadata: Metadata = {
     "Authentic Nigerian cuisine crafted with soul, heat, and the freshest ingredients. Based in Canada. Order via WhatsApp.",
   keywords: ["Nigerian food", "Nigerian restaurant Canada", "Jollof rice", "Mama Gee"],
   icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-192x192.png", sizes: "192x192", type: "image/png" },
-    ],
+    icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-    other: {
-      rel: "mask-icon",
-      url: "/favicon.svg",
-    },
   },
   openGraph: {
-    type: "website",
+    type: "website" as const,
     url: "https://www.africankitchen.online",
     title: "Mama Gee Nigerian Kitchen",
     description: "Authentic Nigerian cuisine crafted with soul, heat, and the freshest ingredients. Based in Canada. Order via WhatsApp.",
