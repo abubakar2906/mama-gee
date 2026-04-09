@@ -40,22 +40,14 @@ export const metadata: Metadata = {
     type: "website" as const,
     url: "https://www.africankitchen.online",
     title: "Mama Gee Nigerian Kitchen",
-    description: "Authentic Nigerian cuisine crafted with soul, heat, and the freshest ingredients. Based in Canada. Order via WhatsApp.",
-    siteName: "Mama Gee Nigerian Kitchen",
+    description: "Authentic Nigerian cuisine crafted with soul, heat, and the freshest ingredients.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Mama Gee Nigerian Kitchen - Authentic Nigerian Cuisine",
       },
     ],
-  },
-  twitter: {
-    card: "summary_large_image" as const,
-    title: "Mama Gee Nigerian Kitchen",
-    description: "Authentic Nigerian cuisine, delivered with soul.",
-    images: ["/og-image.png"],
   },
 };
 
