@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/dashboard", "/auth"],
     },
-    sitemap: "https://mamagee.ca/sitemap.xml",
+    sitemap: "https://www.africankitchen.online/sitemap.xml",
   };
 }

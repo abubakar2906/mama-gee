@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://mamagee.ca";
+const BASE_URL = "https://www.africankitchen.online";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

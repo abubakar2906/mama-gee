@@ -50,8 +50,33 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    type: "website",
+    url: "https://www.africankitchen.online",
+    title: "Mama Gee Nigerian Kitchen",
+    description: "Authentic Nigerian cuisine crafted with soul, heat, and the freshest ingredients. Based in Canada. Order via WhatsApp.",
+    siteName: "Mama Gee Nigerian Kitchen",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Mama Gee Nigerian Kitchen - Authentic Nigerian Cuisine",
+        type: "image/png",
+      },
+      {
+        url: "/og-image-square.png",
+        width: 800,
+        height: 800,
+        alt: "Mama Gee Nigerian Kitchen Logo",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
     title: "Mama Gee Nigerian Kitchen",
     description: "Authentic Nigerian cuisine, delivered with soul.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -85,7 +110,7 @@ export default function RootLayout({
               name: "Mama Gee Nigerian Kitchen",
               description:
                 "Authentic Nigerian cuisine crafted with soul, heat, and the freshest ingredients. Based in Canada.",
-              url: "https://mamagee.ca",
+              url: "https://www.africankitchen.online",
               servesCuisine: ["Nigerian", "West African"],
               address: {
                 "@type": "PostalAddress",
