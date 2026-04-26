@@ -358,7 +358,7 @@ export default function HomePage() {
               </h4>
               <div className="space-y-3">
                 <a 
-                  href={`https://wa.me/2349018450336`}
+                  href={`https://wa.me/+16477734751`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-stone-500 hover:text-emerald-700 transition-colors group"
